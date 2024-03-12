@@ -9,7 +9,6 @@ const Fetch = () => {
     const [data, setData] = React.useState();
 
     useEffect(() => {
-        const fetchData = async () => {
             navigator.geolocation.getCurrentPosition(function(position) {
                 //console.log(position.coords.latitude, position.coords.longitude);
                 setLat(position.coords.latitude);
@@ -28,8 +27,6 @@ const Fetch = () => {
                 //console.log(response.data.main);
             })
             .catch(error => console.error(error));
-        }
-        fetchData();
     }, [lat, long])
 
     return (
