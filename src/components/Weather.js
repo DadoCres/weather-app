@@ -1,6 +1,7 @@
 import React from "react";
 import '../styles.css';
 import { Button } from "semantic-ui-react";
+import Search from "./Search";
 
 const Weather = ({WeatherData}) => {
     const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -18,7 +19,8 @@ const Weather = ({WeatherData}) => {
     return (
         <div className="main">
             <div className="top">
-                <p className="header">{WeatherData.name}</p>
+                {/* <p className="header">{WeatherData.name}</p> */}
+                <Search placeholder={WeatherData.name}></Search>
                 <Button className="button" inverted color='blue' circular icon="refresh" onClick={refresh}></Button>
             </div>
 

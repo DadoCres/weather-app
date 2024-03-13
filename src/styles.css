@@ -10,6 +10,7 @@ body {
 
 .top {
     height: 60px;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     background-color: #8b8c89;
@@ -22,7 +23,6 @@ body {
 }
 
 .header {
-    padding: 10px;
     font-size: 28px;
     color: whitesmoke;
 }
