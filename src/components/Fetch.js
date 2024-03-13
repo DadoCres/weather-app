@@ -13,21 +13,21 @@ const Fetch = () => {
                 //console.log(position.coords.latitude, position.coords.longitude);
                 setLat(position.coords.latitude);
                 setLong(position.coords.longitude);
-            })
-    
+            });
+            
             axios.get('https://api.openweathermap.org/data/2.5/weather',{
-                params: {
-                    lat: lat,
-                    lon: long,
-                    appid: process.env.REACT_APP_API_KEY
-                }
+            params: {
+                lat: lat,
+                lon: long,
+                appid: process.env.REACT_APP_API_KEY
+            }
             })
             .then(response => {
                 setData(response.data);
                 //console.log(response.data.main);
             })
             .catch(error => console.error(error));
-    }, [lat, long])
+    }, [lat, long]);
 
     return (
         <div>

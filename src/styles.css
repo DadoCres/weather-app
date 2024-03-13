@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #8b8c89;
+    border-radius: 15px;
+}
+
+.main {
+    border-radius: 15px;
+    background-color: #6096ba;
+}
+
+.header {
+    padding: 10px;
+    font-size: 28px;
+    color: whitesmoke;
+}
+
+.day {
+    padding: 15px;
+    font-size: 24px;
+    color: whitesmoke;
+}
+
+.temp {
+    padding: 15px;
+    font-size: 18px;
+    color: whitesmoke;
+}
+
+.button {
+    width: 35px;
+    height: 35px;
+}
