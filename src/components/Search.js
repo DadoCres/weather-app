@@ -3,7 +3,7 @@ import '../styles.css';
 import axios from "axios";
 import Weather from "./Weather";
 
-const Search = ({placeholder}) => {
+const Search = ({station}) => {
     const [city, setCity] = React.useState();
     const [data, setData] = React.useState();
 
@@ -16,7 +16,7 @@ const Search = ({placeholder}) => {
         })
         .then(response => {
             setData(response);
-            console.group(response.data)
+            localStorage.setItem('data', JSON.stringify(response.data));
         })
         .catch(error => console.error(error));
     }
@@ -24,16 +24,11 @@ const Search = ({placeholder}) => {
     return (
         <div>
             <div className="search-container">
-                <input type="text" placeholder={placeholder} onChange={e => setCity(e.target.value)}></input>
+                <input type="text" placeholder={station} onChange={e => setCity(e.target.value)}></input>
                 <button className="search-button" onClick={search}>
                     <img className="search-img" src="../search.png" width={30} height={30}></img>
                 </button>
             </div>
-            {(typeof data != 'undefined') ? (
-                <Weather WeatherData={data.data}></Weather>
-            ) : (
-                <div></div>
-            )}
         </div>
     )
 }

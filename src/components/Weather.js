@@ -11,18 +11,9 @@ const Weather = ({WeatherData}) => {
     const temp = Math.round(WeatherData.main.temp-273.15);
     const hum = WeatherData.main.humidity;
     const desc = WeatherData.weather[0].main;
-
-    const refresh = () => {
-        window.location.reload();
-    }
     
     return (
-        <div className="main">
-            <div className="top">
-                <Search placeholder={WeatherData.name}></Search>
-                <Button className="button" inverted color='blue' circular icon="refresh" onClick={refresh}></Button>
-            </div>
-
+        <div>
             <div className="box">
                 <p className="day">{currentDate}</p>
                 <p className="day">{desc}</p>

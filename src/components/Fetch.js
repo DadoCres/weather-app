@@ -9,6 +9,7 @@ const Fetch = () => {
     const [lat, setLat] = React.useState();
     const [long, setLong] = React.useState();
     const [data, setData] = React.useState();
+    const [city, setCity] = React.useState();
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -26,7 +27,7 @@ const Fetch = () => {
         })
         .then(response => {
             setData(response.data);
-            //console.log(response.data.main);
+            localStorage.setItem('data', JSON.stringify(response.data));
         })
         .catch(error => console.error(error));
     }, [lat, long]);
@@ -38,7 +39,13 @@ const Fetch = () => {
     return (
         <div>
             {(typeof data != 'undefined') ? (
-                    <Weather WeatherData={data}></Weather>
+                <div className="main">
+                    <div className="top">
+                        <Search station={data.name}></Search>
+                        <Button className="button" inverted color='blue' circular icon="refresh" onClick={refresh}></Button>
+                    </div>
+                    <Weather WeatherData={JSON.parse(localStorage.getItem('data'))}></Weather>
+                </div>
                 ) : (
                     <div></div>
                 )}
