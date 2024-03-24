@@ -3,6 +3,11 @@ body {
     justify-content: center;
 }
 
+input {
+    padding: 10px;
+    border-radius: 15px;
+}
+
 .box {
     display: flex;
     justify-content: space-between;
@@ -42,4 +47,22 @@ body {
 .button {
     width: 35px;
     height: 35px;
+}
+
+.button:hover {
+    cursor: grab
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+}
+
+.search-img {
+    cursor: grab;
 }
